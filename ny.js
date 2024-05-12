@@ -29,12 +29,38 @@ function displayArticles(articles) {
     articlesContainer.innerHTML = '';
 
     articles.forEach(article => {
-        const { web_url, snippet } = article;
+        const { web_url, headline, snippet, multimedia } = article;
+
+        const image = multimedia.find(media => media.type === 'image');
+        if (!image) return;
+
+        const imageUrl = `https://www.nytimes.com/${image.url}`;
+
         const articleElement = document.createElement('div');
         articleElement.classList.add('article');
-        articleElement.innerHTML = `
-            <p><a href="${web_url}" target="_blank">${snippet}</a></p>
-        `;
+
+        const articleBox = document.createElement('div');
+        articleBox.classList.add('article-box');
+
+        const heading = document.createElement('h3');
+        const headingLink = document.createElement('a');
+        headingLink.href = web_url;
+        headingLink.target = '_blank';
+        headingLink.textContent = headline.main;
+        heading.appendChild(headingLink);
+        articleBox.appendChild(heading);
+
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+        imageElement.alt = headline.main;
+        imageElement.classList.add('article-image');
+        articleBox.appendChild(imageElement);
+
+        const snippetPara = document.createElement('p');
+        snippetPara.textContent = snippet;
+        articleBox.appendChild(snippetPara);
+
+        articleElement.appendChild(articleBox);
         articlesContainer.appendChild(articleElement);
     });
 }
