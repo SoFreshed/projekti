@@ -1,0 +1,26 @@
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.article {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.article-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.article h3 {
+    margin-top: 0;
+}
+
+.article-image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
