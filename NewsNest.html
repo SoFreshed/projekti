@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>News Nest</h1>
+        <h1 class="heading"><span>News</span>Nest</h1>
         <form id="article-search-form">
             <label for="search-keyword">Search Articles:</label>
             <input type="text" id="search-keyword" name="search-keyword" required>
@@ -16,6 +16,7 @@
         </form>
     </header>
     <main>
+        <div id="spinner" class="spinner"></div>
         <div id="articles-container"></div>
     </main>
     <script src="ny.js"></script>

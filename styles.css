@@ -1,26 +1,136 @@
-.articles-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.article-box {
+    display: block;
+    border: 1px solid #ccc;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    height: 400px;
+    overflow: auto;
+}
+
+.article-box:hover {
+    background-color: #727272;
+    cursor: pointer;
 }
 
 .article {
-    width: 48%;
-    margin-bottom: 20px;
+    width: calc(25% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: column;
 }
 
-.article-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
+.article-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .article h3 {
     margin-top: 0;
+    margin-bottom: 2%;
+}
+
+.article p{
+    color: #ffffff;
+}
+
+.article a{
+    font-size:larger;
+    color: #ffffff;
 }
 
 .article-image {
     width: 300px;
-    height: auto;
+    max-height: 300px;
+    margin-bottom: 0%;
+}
+.heading {
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 33%;
+    margin-right: 33%;
+    background-color: rgb(122, 122, 122);
+    border-radius: 10px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 0%;
+}
+
+h1 {
+    margin: 0;
     margin-bottom: 10px;
+    font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
+    color: black;
+}
+span {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: nyt-cheltenham,georgia,'times new roman',times,serif;
+    color: #ffffff;
+}
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: auto;
+    padding: 3px 10px; 
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px; 
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #696969;
+}
+
+.spinner {
+    display: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 16px solid #000000;
+    border-top: 16px solid #ffffff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

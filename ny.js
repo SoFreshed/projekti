@@ -10,9 +10,10 @@ document.getElementById('article-search-form').addEventListener('submit', async 
 
 async function searchArticles(keyword) {
     try {
+        document.getElementById('spinner').style.display = 'block';
+
         const response = await fetch(`${apiUrl}?q=${keyword}&api-key=${apiKey}`);
         const data = await response.json();
-        
 
         if (data && data.response) {
             displayArticles(data.response.docs);
@@ -21,6 +22,8 @@ async function searchArticles(keyword) {
         }
     } catch (error) {
         console.error('Error fetching articles:', error);
+    } finally {
+        document.getElementById('spinner').style.display = 'none';
     }
 }
 
@@ -39,15 +42,13 @@ function displayArticles(articles) {
         const articleElement = document.createElement('div');
         articleElement.classList.add('article');
 
-        const articleBox = document.createElement('div');
+        const articleBox = document.createElement('a');
+        articleBox.href = web_url;
+        articleBox.target = '_blank';
         articleBox.classList.add('article-box');
 
         const heading = document.createElement('h3');
-        const headingLink = document.createElement('a');
-        headingLink.href = web_url;
-        headingLink.target = '_blank';
-        headingLink.textContent = headline.main;
-        heading.appendChild(headingLink);
+        heading.textContent = headline.main;
         articleBox.appendChild(heading);
 
         const imageElement = document.createElement('img');
