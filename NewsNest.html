@@ -8,17 +8,35 @@
 </head>
 <body>
     <header>
-        <h1 class="heading"><span>News</span>Nest</h1>
-        <form id="article-search-form">
-            <label for="search-keyword">Search Articles:</label>
-            <input type="text" id="search-keyword" name="search-keyword" required>
-            <button type="submit">Search</button>
-        </form>
+        <a class="link" href="NewsNest.html">
+            <h1 class="heading"><span>News</span>Nest</h1></a>
+            <form id="article-search-form">
+                <label for="search-keyword">Search Articles:</label>
+                <input type="text" id="search-keyword" name="search-keyword" required>
+                <button type="submit">Search</button>
+                <div id="quick-search" class="quick-search">
+                    <button class="quick-search-button" data-category="sports">Sports</button>
+                    <button class="quick-search-button" data-category="weather">Weather</button>
+                    <button class="quick-search-button" data-category="politics">Politics</button>
+                    <button class="quick-search-button" data-category="animals">Animals</button>
+                    <button class="quick-search-button" data-category="crypto">Crypto</button>
+                    <button class="quick-search-button" data-category="economics">Economics</button>
+                    <button class="quick-search-button" data-category="technology">Technology</button>
+                    <button class="quick-search-button" data-category="entertainment">Entertainment</button>
+                    <button class="quick-search-button" data-category="science">Science</button>
+                    <button class="quick-search-button" data-category="shows">Shows</button>
+                </div>
+            </form>
     </header>
     <main>
         <div id="spinner" class="spinner"></div>
         <div id="articles-container"></div>
     </main>
+    
     <script src="ny.js"></script>
+    <footer>
+        <p>&copy; 2024 Johannes Ruotsala. All rights reserved.</p>
+    </footer> 
 </body>
+
 </html>

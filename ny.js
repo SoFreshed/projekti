@@ -8,6 +8,15 @@ document.getElementById('article-search-form').addEventListener('submit', async 
     searchArticles(keyword);
 });
 
+document.querySelectorAll('.quick-search-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const category = button.getAttribute('data-category');
+        searchArticles(category);
+    });
+});
+
+
 async function searchArticles(keyword) {
     try {
         document.getElementById('spinner').style.display = 'block';
